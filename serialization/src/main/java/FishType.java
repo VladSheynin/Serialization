@@ -1,3 +1,7 @@
+/**
+ * @author Sheynin Vladislav
+ * Enum с названиями рыб и переводом на русский язык
+ */
 public enum FishType {
     PIKE("Щука"), PERCH("Окунь"), SALMON("Лосось"), ZANDER("Судак"), TAIMEN("Таймень");
 
@@ -7,12 +11,8 @@ public enum FishType {
         this.title = title;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
     @Override
     public String toString() {
-        return this.getTitle();
+        return this.title;
     }
 }

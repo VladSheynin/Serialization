@@ -2,10 +2,15 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Sheynin Vladislav
+ * Стартовый класс для упражнения по сериализации/десериализации
+ */
 public class SerializationStart {
+    static final String fileName = "fishes.txt";
+
     public static void main(String[] args) {
         List<Fish> fishes;
-        String fileName = "fishes.txt";
         File file = new File(fileName);
         if (!file.exists()) {
             System.out.println("Файл " + file.getAbsolutePath() + " не существует");
@@ -23,6 +28,10 @@ public class SerializationStart {
         }
     }
 
+    /**
+     * Создает объекты - рыбы с характеристиками название, вес, длина
+     * @return список рыб
+     */
     public static List<Fish> createFishes() {
         List<Fish> fishes = new ArrayList<>();
         fishes.add(new Fish(FishType.PIKE, 8.7, 1.05));

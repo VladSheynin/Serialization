@@ -1,5 +1,9 @@
 import java.io.Serializable;
 
+/**
+ * @author Sheynin Vladislav
+ * Класс рыба, имеющий параметры: название рыбы (Enum FishType), вес и длина рыбы
+ */
 public class Fish implements Serializable {
     FishType fishType;
     double weight;
