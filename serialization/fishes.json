@@ -1,0 +1,17 @@
+[ {
+  "fishType" : "PIKE",
+  "weight" : 8.7,
+  "length" : 1.05
+}, {
+  "fishType" : "ZANDER",
+  "weight" : 5.0,
+  "length" : 0.81
+}, {
+  "fishType" : "TAIMEN",
+  "weight" : 25.0,
+  "length" : 1.45
+}, {
+  "fishType" : "PERCH",
+  "weight" : 1.2,
+  "length" : 0.4
+} ]
