@@ -3,6 +3,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,6 +16,7 @@ public class SerializeFromFileJSON {
 
     public static void main(String[] args) {
         List<Fish> fishes;
+        List<Fisherman> fishermans;
         File file = new File(fileName);
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
@@ -23,12 +25,12 @@ public class SerializeFromFileJSON {
             return;
         }
         try {
-            fishes = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, Fish.class));
+            fishermans = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, Fisherman.class));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        for (Fish fish : fishes) {
-            System.out.println(fish.toString());
+        for (Fisherman fisherman : fishermans) {
+            System.out.println(fisherman.toString());
         }
     }
 }

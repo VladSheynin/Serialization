@@ -3,6 +3,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,6 +16,7 @@ public class SerializeToFileJSON {
 
     public static void main(String[] args) {
         List<Fish> fishes;
+        List<Fisherman> fishermans = new ArrayList<>();
         File file = new File(fileName);
         if (!file.exists()) {
             System.out.println("Файл " + file.getAbsolutePath() + " не существует");
@@ -22,10 +24,17 @@ public class SerializeToFileJSON {
         }
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+        //генерирую рыбаков с разными трофеями
         fishes = Fish.createFishes();
+        fishermans.add(new Fisherman("Vlad", 50, new ArrayList<>(fishes)));
+        fishes.remove(1);
+        fishermans.add(new Fisherman("Alexey", 40, new ArrayList<>(fishes)));
+        fishes.remove(0);
+        fishermans.add(new Fisherman("Anna", 16, new ArrayList<>(fishes)));
+
         System.out.println("Сохраняю в файл");
         try {
-            fishes = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, Fish.class));
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, fishermans);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
