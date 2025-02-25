@@ -1,5 +1,4 @@
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -12,12 +11,12 @@ import java.util.List;
 public class Fisherman {
 
     //@JsonIgnore
-    String address;
-    String name;
+    private String address;
+    private String name;
     @JsonProperty("years")
-    int age;
+    private int age;
     @JsonDeserialize(as = ArrayList.class, contentAs = Fish.class)
-    List<Fish> bestFishes;
+    private List<Fish> bestFishes;
 
     public Fisherman() {
     }

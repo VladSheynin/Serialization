@@ -12,6 +12,7 @@ import java.util.List;
  * Стартовый класс для упражнения по сериализации/десериализации
  * @deprecated - на этом классе игрался, просьба для тестирования использовать классы из test/java
  */
+@Deprecated
 public class SerializationStart {
     static final String fileName = "fishes.json";
 
@@ -25,11 +26,11 @@ public class SerializationStart {
         }
 
         fishes = Fish.createFishes();
-        fishermans.add(new Fisherman("adress1","Vlad", 50, new ArrayList<>(fishes)));
+        fishermans.add(new Fisherman("adress1", "Vlad", 50, new ArrayList<>(fishes)));
         fishes.remove(1);
-        fishermans.add(new Fisherman("adress2","Alexey", 40, new ArrayList<>(fishes)));
+        fishermans.add(new Fisherman("adress2", "Alexey", 40, new ArrayList<>(fishes)));
         fishes.remove(0);
-        fishermans.add(new Fisherman("adress3","Anna", 16, new ArrayList<>(fishes)));
+        fishermans.add(new Fisherman("adress3", "Anna", 16, new ArrayList<>(fishes)));
 
         System.out.println("Сохраняю в строку");
         ObjectMapper objectMapper = new ObjectMapper();
