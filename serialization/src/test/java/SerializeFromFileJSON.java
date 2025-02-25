@@ -27,7 +27,8 @@ public class SerializeFromFileJSON {
             return;
         }
         try {
-            fishermans = objectMapper.readValue(file, objectMapper.getTypeFactory().constructCollectionType(List.class, Fisherman.class));
+            TypeReference<List<Fisherman>> typeRef = new TypeReference<>() {};
+            fishermans = objectMapper.readValue(file, typeRef);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
