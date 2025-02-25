@@ -1,6 +1,7 @@
 [ {
   "name" : "Vlad",
-  "age" : 50,
+  "years" : 50,
+  "address" : "adress1",
   "bestFishes" : [ {
     "fishType" : "PIKE",
     "weight" : 8.7,
@@ -20,7 +21,8 @@
   } ]
 }, {
   "name" : "Alexey",
-  "age" : 40,
+  "years" : 40,
+  "address" : "adress2",
   "bestFishes" : [ {
     "fishType" : "PIKE",
     "weight" : 8.7,
@@ -36,7 +38,8 @@
   } ]
 }, {
   "name" : "Anna",
-  "age" : 16,
+  "years" : 16,
+  "address" : "adress3",
   "bestFishes" : [ {
     "fishType" : "TAIMEN",
     "weight" : 25.0,

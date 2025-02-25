@@ -26,11 +26,11 @@ public class SerializeToFileJSON {
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         //генерирую рыбаков с разными трофеями
         fishes = Fish.createFishes();
-        fishermans.add(new Fisherman("Vlad", 50, new ArrayList<>(fishes)));
+        fishermans.add(new Fisherman("adress1","Vlad", 50, new ArrayList<>(fishes)));
         fishes.remove(1);
-        fishermans.add(new Fisherman("Alexey", 40, new ArrayList<>(fishes)));
+        fishermans.add(new Fisherman("adress2","Alexey", 40, new ArrayList<>(fishes)));
         fishes.remove(0);
-        fishermans.add(new Fisherman("Anna", 16, new ArrayList<>(fishes)));
+        fishermans.add(new Fisherman("adress3","Anna", 16, new ArrayList<>(fishes)));
 
         System.out.println("Сохраняю в файл");
         try {

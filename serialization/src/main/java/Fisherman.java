@@ -1,18 +1,40 @@
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class Fisherman implements Serializable {
+@JsonAutoDetect
+@JsonPropertyOrder({"name", "age", "address", "bestFishes"})
+public class Fisherman {
+
+    //@JsonIgnore
+    String address;
     String name;
+    @JsonProperty("years")
     int age;
+    @JsonDeserialize(as = ArrayList.class, contentAs = Fish.class)
     List<Fish> bestFishes;
 
     public Fisherman() {
     }
 
-    public Fisherman(String name, int age, List<Fish> bestFishes) {
+    public Fisherman(String address, String name, int age, List<Fish> bestFishes) {
+        this.address = address;
         this.name = name;
         this.age = age;
         this.bestFishes = bestFishes;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getName() {
@@ -41,9 +63,6 @@ public class Fisherman implements Serializable {
 
     @Override
     public String toString() {
-        return  "Имя='" + name + '\'' +
-                ", возраст=" + age +
-                ", Лучшие трофеи=" + bestFishes.toString() +
-                '}';
+        return "Имя='" + name + '\'' + ", возраст=" + age + ", Лучшие трофеи=" + bestFishes.toString() + ((address == null || address.isEmpty()) ? "" : ", адрес " + address) + '}';
     }
 }
